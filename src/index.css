@@ -69,6 +69,10 @@ input{
     cursor: pointer;
 }
 
+.form__btn:hover{
+    background-color: #354259;
+}
+
 .btn_usuario{
     background-color: #354259;
     border: none;
@@ -79,5 +83,11 @@ input{
 }
 
 .btn_usuario:hover{
-    background-color: #066163;
+    background-color: #139487;
+}
+
+.btn_usuario{
+    position: absolute;
+    right:20px;
+    top:20px; 
 }
