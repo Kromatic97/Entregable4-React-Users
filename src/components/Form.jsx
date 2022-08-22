@@ -11,7 +11,7 @@ const defaultValue = {
 
 }
 
-const Form = ({getAllUsers, updateInfo, setUpdateInfo}) => {
+const Form = ({getAllUsers, updateInfo, setUpdateInfo, handleCloseForm}) => {
 
   useEffect(() => {
     if(updateInfo){
@@ -48,45 +48,50 @@ const submit = data => {
     //update user
     updateUser(data)
     setUpdateInfo()
+
   }else{
     //create user
     createUser(data)
   }
   reset(defaultValue)
+  handleCloseForm()
 }
 
   return (
     <form onSubmit = {handleSubmit(submit)} className='form'>
-        <h2 className='form__title'>{updateInfo ? 'Update User':'Create new User'}</h2>
+        <div onClick={handleCloseForm}className='form__equis'>
+          <h3>x</h3></div>
+        <h2 className='form__title'>{updateInfo ? 'Update User':'New User'}</h2>
         
         <ul className='form__list'>
 
           <li className='form__item'>
-          <label htmlFor='email'>Email</label>
-          <input {...register("email")} type="email" id='email'/>
+          <label htmlFor='first_name'></label>
+          <input placeholder='first name'{...register("first_name")}type="text" id='first_name'/>
           </li>
 
           <li className='form__item'>
-          <label htmlFor='password'>Password</label>
-          <input {...register("password")} type="password" id='password'/>
+          <label htmlFor='last_name'></label>
+          <input placeholder='last name'{...register("last_name")} type="text" id='last_name'/>
           </li>
 
           <li className='form__item'>
-          <label htmlFor='first_name'>First name</label>
-          <input {...register("first_name")}type="text" id='first_name'/>
+          <label htmlFor='email'></label>
+          <input placeholder='email'{...register("email")} type="email" id='email'/>
           </li>
 
           <li className='form__item'>
-          <label htmlFor='last_name'>Last name</label>
-          <input {...register("last_name")} type="text" id='last_name'/>
+          <label htmlFor='password'></label>
+          <input placeholder='password'{...register("password")} type="password" id='password'/>
           </li>
 
+
           <li className='form__item'>
-          <label htmlFor='birthday'>Birthday</label>
+          <label htmlFor='birthday'></label>
           <input {...register("birthday")} type="date" id='birthday'/>
           </li>
         </ul>
-        <button>{updateInfo ? 'Update':'Create'}</button>
+        <button className='form__btn'>{updateInfo ? 'Update':'Create'}</button>
     </form>
   )
 }

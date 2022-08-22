@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 
 
-const CardUsers = ({user, getAllUsers, setUpdateInfo}) => {
+const CardUsers = ({user, getAllUsers, setUpdateInfo, handleOpenForm}) => {
 
   const deleteUser = () => {
     const URL = `https://users-crud1.herokuapp.com/users/${user.id}/`
@@ -16,6 +16,7 @@ const CardUsers = ({user, getAllUsers, setUpdateInfo}) => {
   
   const handleUpdateClick = () => {
     setUpdateInfo(user)
+    handleOpenForm()
   }
 
   return (
