@@ -28,8 +28,8 @@ const CardUsers = ({user, getAllUsers, setUpdateInfo, handleOpenForm}) => {
             <li className='card__item'><b>Birthay:</b><span>{user.birthday}</span></li>
         </ul>
         <div className='card__footer'>
-        <button onClick={deleteUser} className='card__btn'>Delete</button>
-        <button onClick={handleUpdateClick} className='card__btn'>Update</button>
+        <button onClick={deleteUser} className='card__btn'><i className="bi bi-trash"></i></button>
+        <button onClick={handleUpdateClick} className='card__btn'><i className="bi bi-pencil-square"></i></button>
         </div>
     </article>
   )

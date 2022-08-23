@@ -24,14 +24,11 @@
     aspect-ratio: 1;
 }
 .form__equis:hover{
-    background-color: #FF4A4A;
-    color: white;
+    color: red;
 }
 .form_none{
-    display: none;
-   
+    display: none;  
 }
-
 
 .form-container{
     position:fixed;
@@ -45,6 +42,15 @@
     backdrop-filter: blur(9px);
     z-index: 1;
 }
+
+.form_names{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
 input{
     
     border-radius: 4px;
@@ -84,10 +90,42 @@ input{
 
 .btn_usuario:hover{
     background-color: #139487;
+    
 }
 
 .btn_usuario{
     position: absolute;
     right:20px;
     top:20px; 
+}
+
+.card__btn:hover{
+    background-color: black;
+}
+
+.card__btn:nth-child(1){
+    background-color: #F94C66;  
+}
+
+.card__btn:nth-child(1):hover{
+    background-color: #990000;
+}
+
+
+
+.card__btn:nth-child(2){
+    background-color:#319DA0;
+}
+
+.card__btn:nth-child(2):hover{
+    background-color: #1D5C63;
+    color: white;
+}
+
+.bi-trash{
+    font-size: 23px;
+}
+
+.bi-pencil-square{
+    font-size: 23px;
 }

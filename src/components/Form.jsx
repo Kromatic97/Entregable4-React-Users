@@ -60,34 +60,36 @@ const submit = data => {
   return (
     <form onSubmit = {handleSubmit(submit)} className='form'>
         <div onClick={handleCloseForm}className='form__equis'>
-          <h3>x</h3></div>
+          <h3><i class="bi bi-x-circle-fill"></i></h3></div>
         <h2 className='form__title'>{updateInfo ? 'Update User':'New User'}</h2>
         
         <ul className='form__list'>
+          
+          <div className='form_names'>
+            
+                <label htmlFor='first_name'><i className="bi bi-person-lines-fill"></i></label>
+                <li className='form__item'>
+                   <input placeholder='first name'{...register("first_name")}type="text" id='first_name'/>
+                </li>
+
+                <li className='form__item'>
+                     <input placeholder='last name'{...register("last_name")} type="text" id='last_name'/>
+                </li>
+          </div>
 
           <li className='form__item'>
-          <label htmlFor='first_name'></label>
-          <input placeholder='first name'{...register("first_name")}type="text" id='first_name'/>
-          </li>
-
-          <li className='form__item'>
-          <label htmlFor='last_name'></label>
-          <input placeholder='last name'{...register("last_name")} type="text" id='last_name'/>
-          </li>
-
-          <li className='form__item'>
-          <label htmlFor='email'></label>
+          <label htmlFor='email'><i className="bi bi-envelope-fill"></i></label>
           <input placeholder='email'{...register("email")} type="email" id='email'/>
           </li>
 
           <li className='form__item'>
-          <label htmlFor='password'></label>
+          <label htmlFor='password'><i className="bi bi-key-fill"></i></label>
           <input placeholder='password'{...register("password")} type="password" id='password'/>
           </li>
 
 
           <li className='form__item'>
-          <label htmlFor='birthday'></label>
+          <label htmlFor='birthday'><i className="bi bi-calendar-event-fill"></i></label>
           <input {...register("birthday")} type="date" id='birthday'/>
           </li>
         </ul>
